@@ -98,7 +98,7 @@ export default function DashboardPage() {
                     key={i}
                     title={`${row.day} ${heatmapHours[i]} — ${Math.round(v * 100)}% capacity`}
                     className="h-8 rounded-md transition-transform duration-300 hover:scale-110"
-                    style={{ background: `rgba(200,255,46,${0.06 + v * 0.9})` }}
+                    style={{ background: `rgba(46,242,160,${0.06 + v * 0.9})` }}
                   />
                 ))}
               </div>

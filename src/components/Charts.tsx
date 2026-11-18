@@ -20,8 +20,8 @@ export function RevenueChart() {
       <svg viewBox={`0 0 ${w} ${h}`} className="w-full">
         <defs>
           <linearGradient id="revFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#C8FF2E" stopOpacity="0.32" />
-            <stop offset="100%" stopColor="#C8FF2E" stopOpacity="0" />
+            <stop offset="0%" stopColor="#2EF2A0" stopOpacity="0.32" />
+            <stop offset="100%" stopColor="#2EF2A0" stopOpacity="0" />
           </linearGradient>
         </defs>
         {[0.25, 0.5, 0.75, 1].map((f) => (
@@ -39,7 +39,7 @@ export function RevenueChart() {
         <polyline
           points={line}
           fill="none"
-          stroke="#C8FF2E"
+          stroke="#2EF2A0"
           strokeWidth="3"
           strokeLinejoin="round"
           strokeLinecap="round"
@@ -48,7 +48,7 @@ export function RevenueChart() {
         {pts.map((p, i) =>
           i % 2 === 0 || i === pts.length - 1 ? (
             <g key={p.month}>
-              <circle cx={p.x} cy={p.y} r="4" fill="#08090B" stroke="#C8FF2E" strokeWidth="2.5" />
+              <circle cx={p.x} cy={p.y} r="4" fill="#08090B" stroke="#2EF2A0" strokeWidth="2.5" />
               <text x={p.x} y={h - 8} textAnchor="middle" fontSize="11" fill="#98A29B" fontFamily="Inter, sans-serif">
                 {p.month}
               </text>
@@ -56,7 +56,7 @@ export function RevenueChart() {
           ) : null
         )}
         <g>
-          <rect x={last.x - 88} y={last.y - 42} width="86" height="28" rx="8" fill="#C8FF2E" />
+          <rect x={last.x - 88} y={last.y - 42} width="86" height="28" rx="8" fill="#2EF2A0" />
           <text x={last.x - 45} y={last.y - 23} textAnchor="middle" fontSize="12.5" fontWeight="700" fill="#08090B" fontFamily="Inter, sans-serif">
             $18,640
           </text>
@@ -94,7 +94,7 @@ export function ProgressRing({ value, size = 64, stroke = 6 }: { value: number; 
         cx={size / 2}
         cy={size / 2}
         r={r}
-        stroke="#C8FF2E"
+        stroke="#2EF2A0"
         strokeWidth={stroke}
         fill="none"
         strokeLinecap="round"
