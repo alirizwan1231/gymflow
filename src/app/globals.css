@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --volt: #c8ff2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #08090b;
+  color: #f2f5ec;
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #c8ff2e;
+  color: #08090b;
+}
+
+/* slim scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(200, 255, 46, 0.35) rgba(255, 255, 255, 0.04);
+}
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(200, 255, 46, 0.3);
+  border-radius: 99px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* outlined display text */
+.text-stroke {
+  -webkit-text-stroke: 1.5px rgba(242, 245, 236, 0.28);
+  color: transparent;
+}
+.text-stroke-volt {
+  -webkit-text-stroke: 1.5px rgba(200, 255, 46, 0.55);
+  color: transparent;
+}
+
+/* dotted grid backdrop */
+.dotgrid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.blueprint {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* diagonal hazard stripes */
+.stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(200, 255, 46, 0.9) 0 14px,
+    rgba(8, 9, 11, 0.95) 14px 28px
+  );
+}
+
+/* table row hover */
+.row-hover {
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.row-hover:hover {
+  background: rgba(200, 255, 46, 0.05);
+}
+
+/* modal */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.modal-in {
+  animation: modalIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fadeIn 0.35s ease both;
+}
+
+/* chart draw-in */
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.chart-line {
+  stroke-dasharray: 1400;
+  animation: drawLine 2.2s ease forwards;
+}
+@keyframes growBar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.bar-grow {
+  transform-origin: bottom;
+  animation: growBar 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
